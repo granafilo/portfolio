@@ -1,24 +1,52 @@
 import "./style.css";
-import 'keen-slider/keen-slider.min.css'
-import KeenSlider from 'keen-slider'
 
-window.addEventListener("load", () => {
-    // Sposta qui il codice del tuo KeenSlider
-    var slider = new KeenSlider("#my-keen-slider", {
-        loop: true,
-        mode: "free-snap",
-        slides: { origin: "center", perView: 2, spacing: 25 },
-        range: {
-            min: -50,
-            max: 50,
-        },
-    })
+import { gsap } from "gsap";
+
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollSmoother } from "gsap/ScrollSmoother";
+
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+
+
+const smoother = ScrollSmoother.create({
+    wrapper: "#smooth-wrapper",
+    content: "#smooth-content",
+    smooth: 1.5,
+    normalizeScroll: true,
+    ignoreMobileResize: true,
+    preventDefault: true
 });
+
+const horizontalSection = document.querySelector("#horizontal");
+const contents = gsap.utils.toArray("#horizontal .content");
+
+// Calcoliamo quanto deve scorrere lo slider (larghezza totale meno una card)
+// Questo assicura che lo scroll si fermi correttamente
+let scrollAmount = horizontalSection.scrollWidth - window.innerWidth;
+
+gsap.to(horizontalSection, {
+    x: -scrollAmount,
+    ease: "none",
+    scrollTrigger: {
+        trigger: "#horizontal",
+        pin: true,
+        scrub: 1,
+        // Durata dello scroll proporzionale alla lunghezza del contenuto
+        end: () => "+=" + scrollAmount,
+        snap: {
+            // Lo snap deve basarsi sulla distanza tra i centri delle card
+            snapTo: 1 / (contents.length - 1),
+            duration: 0.5,
+            delay: 0.1
+        }
+    }
+});
+
 
 const diffElement = document.querySelector('.diff'); // o un ID specifico
 
-diffElement.addEventListener('mousedown', (e) => e.stopPropagation());
-diffElement.addEventListener('touchstart', (e) => e.stopPropagation());
+// diffElement.addEventListener('mousedown', (e) => e.stopPropagation());
+// diffElement.addEventListener('touchstart', (e) => e.stopPropagation());
 
 
 
