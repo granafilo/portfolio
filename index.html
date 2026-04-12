@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="it" data-theme="light" class="transition-all duration-500">
+<html lang="it" data-theme="dark" class="transition-all duration-500">
 
 <head>
   <meta charset="UTF-8" />
@@ -7,232 +7,153 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <link rel="stylesheet" href="src/style.css">
-
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      padding: 0;
-    }
-
-    .pin-spacer {
-      height: auto !important;
-    }
-
-    #horizontal {
-      display: flex;
-      flex-wrap: nowrap;
-      /* La larghezza totale deve bastare a contenere tutte le card + gap */
-      width: fit-content;
-      height: 100vh;
-      padding: 0 10vw;
-      /* Opzionale: spazio iniziale e finale */
-      gap: 5vw;
-      /* Spazio tra le card */
-    }
-
-    .content {
-      display: grid;
-      place-items: center;
-      width: 80vw;
-      /* Card più piccola */
-      height: 80vh;
-      /* Centrata verticalmente */
-      flex-shrink: 0;
-      border-radius: 30px;
-      /* Centratura verticale se il padre è 100vh */
-      margin-top: 10vh;
-    }
-  </style>
 </head>
 
 <body class=" min-h-screen flex flex-col">
 
+  <div class="drawer drawer-end flex-1">
+    <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
+    <div class="drawer-content flex flex-col">
 
+      <!-- NAVBAR -->
+      <header class="sticky top-0 z-100 flex justify-center bg-base-100 w-full px-15">
+        <div class="w-full lg:max-w-375 navbar py-25 px-15 lg:px-0">
+          <div class="flex-1 text-title lg:text-title-lg font-semibold text-n"><a href="#profile-section">FILIPPO GRANATA</a></div>
+          <div class="hidden flex-none lg:block">
+            <ul class="menu menu-horizontal gap-1">
+              <!-- Navbar menu content here -->
+              <li><a href="#portfolio" class="navbarSection">PORTFOLIO</a></li>
+              <li><a href="#about" class="navbarSection">ABOUT</a></li>
+              <li><a href="#contact" class="navbarSection">CONTACT ME</a></li>
+            </ul>
+          </div>
+          <div class="flex-none lg:hidden">
+            <label for="my-drawer-2" aria-label="open sidebar" class="btn btn-square btn-ghost">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="size-9">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
+              </svg>
+            </label>
+          </div>
+        </div>
+      </header>
 
-  <div id="smooth-wrapper">
-    <div id="smooth-content">
-      <div class="drawer drawer-end flex-1">
-        <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
-        <div class="drawer-content flex flex-col">
-
-          <!-- NAVBAR -->
-          <header class="sticky top-0 z-100 flex justify-center bg-base-100 w-full px-15">
-            <div class="w-full lg:max-w-375 navbar py-25 px-15 lg:px-0">
-              <div class="flex-1 text-title lg:text-title-lg font-semibold text-n">FILIPPO GRANATA</div>
-              <div class="hidden flex-none lg:block">
-                <ul class="menu menu-horizontal">
-                  <!-- Navbar menu content here -->
-                  <li><a href="#portfolio" class="navbarSection">PORTFOLIO</a></li>
-                  <li><a href="#about" class="navbarSection">ABOUT</a></li>
-                  <li><a href="#contact" class="navbarSection">CONTACT ME</a></li>
-                </ul>
-              </div>
-              <input id="theme-toggle" type="checkbox" class="toggle toggle-l mx-25" />
-              <div class="flex-none lg:hidden">
-                <label for="my-drawer-2" aria-label="open sidebar" class="btn btn-square btn-ghost">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" class="size-9">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                      d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
-                  </svg>
-                </label>
+      <!-- MAIN CONTENT -->
+      <main class="flex flex-col items-center w-full h-full">
+        <!-- PROFILE SECTION -->
+        <section id="profile-section" class="bg-linear-to-t  from-base-300/70 to-base-content w-full py-30 px-15 lg:px-0 flex flex-col gap-25">
+          <div class="w-full flex p-25 justify-center">
+            <div class="avatar group">
+              <div class="ring-base-100 ring-offset-base-300 w-50 md:w-60 lg:w-75 rounded-full ring-2 ring-offset-2
+              transition-all duration-500 ">
+                <img src="https://img.daisyui.com/images/profile/demo/spiderperson@192.webp" />
               </div>
             </div>
-          </header>
+          </div>
+          <div class="w-full flex flex-col items-center justify-center gap-5 text-title duration-0">
+            <div class="text-6xl text-center">
 
-          <!-- MAIN CONTENT -->
-          <main class="flex flex-col items-center w-full h-full">
-            <!-- PROFILE SECTION -->
-            <div class="bg-base-300 w-full py-25 px-15 lg:px-0 flex flex-col">
-              <div class="w-full flex p-25 justify-center">
-                <div class="avatar  group">
-                  <div class="ring-base-100 ring-offset-base-300 w-50 md:w-60 lg:w-75 rounded-full ring-2 ring-offset-2
-              transition-all duration-500 transform-3d group-hover:transform-[rotateY(180deg)]">
-                    <img src="https://img.daisyui.com/images/profile/demo/spiderperson@192.webp" />
-                  </div>
+              <span class="text-secondary">id</span>=<span class="text-success">"</span><span
+                class=" font-semibold text-pretty">FILIPPO GRANATA</span><span class="text-success">"</span>
+            </div>
+            <div>
+
+              <span class="text-secondary">class</span>=<span class="text-success">"</span><span>Jr. Full Stack
+                Developer</span><span class="text-success">"</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- PORTFOLIO SECTION -->
+        <section id="portfolio" class=" bg-base-300/70 w-full py-25 px-25 lg:px-0 flex flex-col h-auto items-center gap-25">
+
+          <div
+            class="divider p-0 m-0 h-auto text-title lg:text-title-lg font-semibold">
+            PORTFOLIO</div>
+          <!--  -->
+          <div class="w-full px-25 max-w-450 items-center justify-center flex flex-wrap gap-4" style="">
+            <!-- CARD -->
+            <div
+              class="w-full lg:w-[calc(50%-1rem)] 2xl:w-[calc(33.33%-1rem)] aspect-video card  bg-primary flex flex-col rounded-35 gap-15 bg-[url(/img/bombjack.jpg)] bg-cover bg-center bg-no-repeat grayscale hover:grayscale-0 transition-all duration-400 cursor-pointer items-center justify-center">
+            </div>
+            <!-- CARD -->
+            <div
+              class="w-full lg:w-[calc(50%-1rem)] 2xl:w-[calc(33.33%-1rem)] aspect-video card  bg-primary  flex flex-col rounded-35 gap-15 bg-[url(/img/quizapp.png)] bg-cover bg-center bg-no-repeat grayscale hover:grayscale-0 transition-all duration-400 cursor-pointer items-center justify-center">
+              <div class="inset-0  text-7xl font-bold text-base-100">QUIZ APP
+              </div>
+            </div>
+            <!-- CARD -->
+            <div
+              class="w-full lg:w-[calc(50%-1rem)] 2xl:w-[calc(33.33%-1rem)] aspect-video card  bg-primary  flex flex-col rounded-35 gap-15 bg-[url(/img/restyle.png)] bg-cover bg-center bg-no-repeat grayscale hover:grayscale-0 transition-all duration-400 cursor-pointer items-center justify-center">
+              <div class=" text-4xl  sm:text-7xl font-bold text-base-content text-center">
+                RESTYLE EXERCISE</div>
+            </div>
+
+
+          </div>
+
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about"
+          class="bg-linear-to-b from-base-300/70 to-base-200 w-full py-25 px-15 lg:px-0 flex flex-col h-auto items-center gap-25">
+          <div
+            class="divider h-auto m-0 text-title lg:text-title-lg font-semibold ">
+            ABOUT ME</div>
+          <div class="px-25 w-full justify-center text-pretty flex gap-30">
+
+            <div class="2xl:w-4/12 lg:min-w-200 md:min-w-125 xl:flex-row flex flex-col items-center xl:items-start gap-12">
+
+              <div class=" xl:w-6/12 flex flex-col gap-5">
+                <div class="font-bold text-3xl w-full text-shadow-[0_0_10px_#89ceff80,0_0_20px_#89ceff4d] ">Chi sono
+                </div>
+                <div>
+                  Il mio percorso nel mondo del software è iniziato con una solida base scientifica e accademica,
+                  passando
+                  per Scienze Applicate e l’Informatica in Statale, fino all’attuale specializzazione pratica presso
+                  l'ITS.
+                  Questa evoluzione mi ha permesso di unire il rigore teorico alla capacità di sporcarmi le mani su
+                  progetti
+                  reali.
                 </div>
               </div>
-              <div class="w-full flex justify-center text-title duration-0">
-                <span class="text-secondary">class</span>=<span class="text-success">"</span><span>Jr. Full Stack
-                  Developer</span><span class="text-success">"</span>
-              </div>
-            </div>
-
-            <!-- PORTFOLIO SECTION -->
-            <div id="portfolio" class="bg-base-200 w-full py-25 px-15 lg:px-0 flex flex-col h-auto">
-
-              <div class="divider h-auto text-title lg:text-title-lg font-semibold text-n">PORTFOLIO</div>
-              <!-- SLIDER WRAPPER -->
-              <div class="w-full flex justify-center">
-                <!-- PROJECT SLIDER -->
-                <div id="my-keen-slider" class="keen-slider w-full py-25 overflow-hidden">
-                  <!-- PROJECT CARD -->
-                  <div
-                    class="card max-w-[80%] keen-slider__slide bg-primary w-full  min-w-250 flex flex-col p-25 rounded-35 gap-15 max-h-[50%]">
-                    <div class="w-full text-center text-subtitle-lg font-semibold project-title">
-                      QUIZ APP
-                    </div>
-                    <div class="flex flex-col lg:flex-row gap-25 h-full ">
-                      <div class="lg:w-[40%] flex justify-center max-h-50 lg:max-h-75">
-                        <img class="project-img rounded-25 w-full  object-cover" src="/img/quizapp.png" alt="">
-                      </div>
-                      <div class="flex flex-col flex-1 max-h-50 lg:max-h-75 justify-between items-baseline gap-15 ">
-                        <div class="flex-1 overflow-hidden text-ellipsis description h-full">
-                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, esse ipsam. Qui commodi
-                          voluptatum illum at, repudiandae praesentium necessitatibus consequuntur nisi dolor? Expedita
-                          est maxime sint dolorem dolore fugit odit.Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit.
-                          Odit, esse ipsam. Qui commodi
-                          voluptatum illum at, repudiandae praesentium necessitatibus consequuntur nisi dolor? Expedita
-                          est maxime sint dolorem dolore fugit odit.
-                        </div>
-                        <div class="grid grid-cols-3 w-full gap-25 h-auto">
-                          <div
-                            class="open-modal btn border-none col-start-1 col-end-3 bg-secondary text-center p-1 rounded-full font-semibold cursor-pointer">
-                            MAGGIORI INFO</div>
-                          <div
-                            class="btn border-none col-start-3 bg-success text-center p-1 rounded-full font-semibold cursor-pointer">
-                            <a class="repo-link" class="w-full h-full flex items-center justify-center"
-                              href="https://github.com/granafilo/quizApp" target="_blank">GIT</a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- PROJECT CARD -->
-                  <div
-                    class="card max-w-[80%] keen-slider__slide bg-primary w-full  min-w-250 flex flex-col p-25 rounded-35 gap-15 ">
-                    <div class="w-full text-center text-subtitle-lg font-semibold project-title">
-                      QUIZ APP
-                    </div>
-                    <div class="flex flex-col lg:flex-row gap-25 h-full ">
-                      <div class="lg:w-[40%] flex justify-center max-h-50 lg:max-h-75">
-                        <img class="project-img rounded-25 w-full  object-cover" src="/img/quizapp.png" alt="">
-                      </div>
-                      <div class="flex flex-col flex-1 max-h-50 lg:max-h-75 justify-between items-baseline gap-15 ">
-                        <div class="flex-1 overflow-hidden text-ellipsis description h-full">
-                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, esse ipsam. Qui commodi
-                          voluptatum illum at, repudiandae praesentium necessitatibus consequuntur nisi dolor? Expedita
-                          est maxime sint dolorem dolore fugit odit.Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit.
-                          Odit, esse ipsam. Qui commodi
-                          voluptatum illum at, repudiandae praesentium necessitatibus consequuntur nisi dolor? Expedita
-                          est maxime sint dolorem dolore fugit odit.
-                        </div>
-                        <div class="grid grid-cols-3 w-full gap-25 h-auto">
-                          <div
-                            class="open-modal btn border-none col-start-1 col-end-3 bg-secondary text-center p-1 rounded-full font-semibold cursor-pointer">
-                            MAGGIORI INFO</div>
-                          <div
-                            class="btn border-none col-start-3 bg-success text-center p-1 rounded-full font-semibold cursor-pointer">
-                            <a class="repo-link" class="w-full h-full flex items-center justify-center"
-                              href="https://github.com/granafilo/quizApp" target="_blank">GIT</a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- PROJECT CARD -->
-                  <div
-                    class="card max-w-[80%] keen-slider__slide bg-primary w-full  min-w-250 flex flex-col p-25 rounded-35 gap-15 max-h-[50%]">
-                    <div class="w-full text-center text-subtitle-lg font-semibold project-title">
-                      RESTYLE OUTDATED WEBSITE
-                    </div>
-                    <div class="flex flex-col lg:flex-row gap-25 h-full ">
-                      <div class="lg:w-[40%] flex justify-center max-h-50 lg:max-h-75">
-                        <img class="project-img rounded-25 w-full  object-cover" src="/img/restyle-nuovo.png" alt="">
-                      </div>
-                      <div class="flex flex-col flex-1 max-h-50 lg:max-h-75 justify-between items-baseline gap-15 ">
-                        <div class="flex-1 overflow-hidden text-ellipsis description h-full">
-
-                        </div>
-                        <div class="grid grid-cols-3 w-full gap-25 h-auto">
-                          <div
-                            class="open-modal btn border-none col-start-1 col-end-3 bg-secondary text-center p-1 rounded-full font-semibold cursor-pointer"
-                            data-type="special">
-                            MAGGIORI INFO</div>
-                          <div class="w-full p-0 h-full col-start-3 rounded-full font-semibold cursor-pointer">
-                            <a class="repo-link w-full h-full p-0 flex justify-center items-center"
-                              href="https://github.com/granafilo/website-restyle-frontend"
-                              target="_blank"><span>GIT</span></a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+              <div class="xl:w-6/12 flex flex-col gap-5">
+                <div class="font-bold text-3xl w-full text-shadow-[0_0_10px_#89ceff80,0_0_20px_#89ceff4d] ">Il mio
+                  approccio</div>
+                <div>
+                  Come futuro Full Stack Developer, amo l'equilibrio tra i due mondi: mi affascina la logica pura e
+                  strutturale del Backend, ma ricerco la precisione millimetrica necessaria nel Frontend. Il mio metodo
+                  di
+                  sviluppo si basa sul concetto di evoluzione: prediligo la creazione di un MVP (Minimum Viable Product)
+                  solido e funzionante, per poi rifinire il codice in ottica di efficienza, scalabilità e performance.
                 </div>
               </div>
-
             </div>
 
-            <!-- ABOUT SECTION -->
-            <div id="about" class="bg-base-300 w-full py-25 px-15 lg:px-0 flex flex-col h-auto items-center">
-              <div class="divider h-auto text-title lg:text-title-lg font-semibold text-n">ABOUT</div>
-              <div class="max-w-[75%] min-w-[300px] lg:min-w-[500px] text-pretty">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur asperiores quaerat quas rerum illo
-                doloribus. Culpa laboriosam quasi autem consequatur cupiditate ipsum sint illum officia totam
-                consequuntur
-                numquam temporibus debitis sed deserunt error perspiciatis repellat, quidem cumque aut est. Mollitia
-                nesciunt dolor esse sunt sit ad praesentium alias nulla sequi!
-              </div>
-            </div>
+          </div>
 
-            <!-- CONTACT SECTION -->
-            <div id="contact"
-              class="bg-base-200 w-full py-25 px-15 lg:px-0 flex flex-col h-auto items-center justify-center text-base-content">
-              <div class="divider h-auto text-title lg:text-title-lg font-semibold text-n">CONTACT ME</div>
-              <form class="w-[50%] min-w-[200px] flex items-center flex-col">
+        </section>
+
+        <section id="contact"
+          class="bg-linear-to-b from-base-200 to-base-300 w-full py-25 px-25 lg:px-0 flex flex-col h-auto items-center gap-25">
+
+          <div
+            class="divider h-auto m-0 text-title lg:text-title-lg font-semibold ">
+            CONTACT ME</div>
+          <div class="w-full flex justify-center">
+
+            <div class="w-full md:w-6/12 2xl:max-w-4/12  lg:min-w-200 md:min-w-125">
+              <form class=" min-w-[200px] flex items-center flex-col">
                 <fieldset class="fieldset w-full">
                   <legend class="fieldset-legend">Name</legend>
-                  <input type="text" required class="input rounded-25 w-full p-15 h-auto" placeholder="Type here" />
+                  <input type="text" required class="input rounded-25 w-full p-15 h-auto"
+                    placeholder="Type your name..." />
                 </fieldset>
                 <fieldset class="fieldset w-full">
                   <legend class="fieldset-legend">Surname</legend>
-                  <input type="text" required class="input rounded-25 w-full p-15 h-auto" placeholder="Type here" />
+                  <input type="text" required class="input rounded-25 w-full p-15 h-auto"
+                    placeholder="Type your surname..." />
                 </fieldset>
                 <fieldset class="fieldset w-full h-auto">
                   <legend class="fieldset-legend">Email</legend>
@@ -261,120 +182,135 @@
                           fill="currentColor"></path>
                       </g>
                     </svg>
-                    <input type="tel" class="tabular-nums rounded-25 w-full p-15 h-auto" required placeholder="Phone"
-                      pattern="[0-9]*" minlength="10" maxlength="10" title="Must be 10 digits" />
+                    <input type="tel" class="tabular-nums rounded-25 w-full p-15 h-auto" required
+                      placeholder="Type your phone number..." pattern="[0-9]*" minlength="10" maxlength="10"
+                      title="Must be 10 digits" />
                   </label>
                   <p class="validator-hint">Must be 10 digits</p>
                 </fieldset>
                 <fieldset class="fieldset w-full">
                   <legend class="fieldset-legend">Message</legend>
                   <textarea class="textarea rounded-25 w-full p-15 h-75 overflow-y-auto"
-                    placeholder="Inserisci qui il tuo messaggio"></textarea>
+                    placeholder="Type your message here..."></textarea>
                 </fieldset>
                 <button
                   class="btn bg-success w-full p-15 h-auto rounded-full mt-25 cursor-pointer hover:scale-105 transition-all duration-300"
                   type="submit">SEND</button>
               </form>
             </div>
-
-          </main>
-
-          <!-- FOOTER -->
-          <footer class="footer footer-horizontal footer-center bg-base-100 text-base-content rounded p-10">
-            <nav class="w-full">
-              <div class="grid grid-flow-col gap-4 items-center min-w-175">
-                <a class="cursor-pointer hover:scale-110 flex w-full justify-center">
-                  <img src="/icons/github.svg" alt="">
-                </a>
-                <a class="cursor-pointer hover:scale-110 flex w-full justify-center">
-                  <img src="/icons/instagram.svg" alt="">
-                </a>
-                <a class="cursor-pointer hover:scale-110 flex w-full justify-center">
-                  <img src="/icons/linkedin.svg" alt="">
-                </a>
-              </div>
-            </nav>
-            <aside>
-              <p>Copyright © - All right reserved by ACME Industries Ltd</p>
-            </aside>
-          </footer>
-        </div>
-
-        <!-- DRAWER SIDEBAR -->
-        <div class="drawer-side z-101">
-          <label for="my-drawer-2" aria-label="close sidebar" class="drawer-overlay"></label>
-
-          <ul class="menu bg-base-100 min-h-full w-80 p-4 py-25  ">
-            <!-- Sidebar content here -->
-            <div class="flex w-full justify-end">
-              <label for="my-drawer-2" aria-label="close sidebar" class="cursor-pointer btn btn-ghost">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                  stroke="currentColor" class="size-9">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                </svg>
-              </label>
-            </div>
-
-            <li><a href="#portfolio" class="navbarSection">PORTFOLIO</a></li>
-            <li><a href="#about" class="navbarSection">ABOUT</a></li>
-            <li><a href="#contact" class="navbarSection">CONTACT ME</a></li>
-          </ul>
-        </div>
-      </div>
-
-
-      <!-- You can open the modal using ID.showModal() method -->
-      <dialog id="my_modal" class="modal rounded-25">
-        <div class="modal-box  max-w-[90%] lg:max-w-7xl rounded-25 p-0">
-          <form method="dialog">
-            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-          </form>
-          <div class=" bg-primary w-full flex flex-col p-25 rounded-35 gap-15 ">
-            <div id="card-title" class="w-full text-center text-subtitle-lg font-semibold ">
-
-            </div>
-            <div class="flex flex-col ">
-              <div id="modalImgWrapper" class="lg:min-w-[40%] lg:pb-25 w-auto aspect-video flex justify-center ">
-
-              </div>
-              <div class="flex flex-col flex-1 gap-15 ">
-                <div id="modal-text" class="flex-1 max-h-75 lg:max-h-75 overflow-y-auto text-ellipsis">
-                </div>
-                <div class="w-full h-auto">
-                  <div
-                    class="btn border-none col-start-1 col-end-3 bg-success text-center p-0 rounded-full font-semibold cursor-pointer w-full">
-                    <a id="repo-link" class="w-full h-full flex items-center justify-center" href=""
-                      target="_blank">GIT</a>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
 
-        </div>
-        <form method="dialog" class="modal-backdrop">
-          <button>close</button>
-        </form>
-      </dialog>
+        </section>
+      </main>
 
-      <section id="horizontal">
-        <div class="content bg-black">
-          <p>1</p>
+      <!-- FOOTER -->
+      <footer class="footer footer-horizontal footer-center bg-base-100 text-base-content rounded p-10">
+        <nav class="flex justify-center gap-30">  
+          <a class="cursor-pointer hover:scale-110 flex justify-center " href="https://github.com/granafilo"
+            target="_blank">
+            <img class="aspect" src="/icons/github.svg"  alt="">
+          </a>
+          <a class="cursor-pointer hover:scale-110 flex justify-center">
+            <img src="/icons/instagram.svg" alt="">
+          </a>
+          <a class="cursor-pointer hover:scale-110 flex justify-center">
+            <img src="/icons/linkedin.svg" alt="">
+          </a>
+        </nav>
+        <aside>
+          <p>Copyright © - All right reserved by ACME Industries Ltd</p>
+        </aside>
+      </footer>
+    </div>
+
+    <!-- DRAWER SIDEBAR -->
+    <div class="drawer-side z-101">
+
+      <label for="my-drawer-2" aria-label="close sidebar" class="drawer-overlay"></label>
+
+      <ul class="menu bg-base-100 min-h-full w-80 p-4 py-25  ">
+        <!-- Sidebar content here -->
+        <div class="flex w-full justify-end">
+          <label for="my-drawer-2" aria-label="close sidebar" class="cursor-pointer btn btn-ghost">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="size-9">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg>
+          </label>
         </div>
-        <div class="content bg-amber-300">
-          <p>2</p>
-        </div>
-        <div class="content bg-amber-600">
-          <p>3</p>
-        </div>
-        <div class="content bg-amber-800">
-          <p>4</p>
-        </div>
-      </section>
+
+        <li><a href="#portfolio" class="navbarSection">PORTFOLIO</a></li>
+        <li><a href="#about" class="navbarSection">ABOUT</a></li>
+        <li><a href="#contact" class="navbarSection">CONTACT ME</a></li>
+      </ul>
     </div>
   </div>
 
 
+  <!-- You can open the modal using ID.showModal() method -->
+  <dialog id="my_modal" class="modal rounded-25">
+    <div class="modal-box  max-w-[90%] lg:max-w-7xl rounded-25 p-0">
+      <form method="dialog">
+        <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+      </form>
+      <div class=" bg-primary w-full flex flex-col p-25 rounded-35 gap-15 ">
+        <div id="card-title" class="w-full text-center text-subtitle-lg font-semibold ">
+
+        </div>
+        <div class="flex flex-col ">
+          <div id="modalImgWrapper" class="lg:min-w-[40%] lg:pb-25 w-auto aspect-video flex justify-center ">
+
+          </div>
+          <div class="flex flex-col flex-1 gap-15 ">
+            <div id="modal-text" class="flex-1 max-h-75 lg:max-h-75 overflow-y-auto text-ellipsis">
+            </div>
+            <div class="w-full h-auto">
+              <div
+                class="btn border-none col-start-1 col-end-3 bg-success text-center p-0 rounded-full font-semibold cursor-pointer w-full">
+                <a id="repo-link" class="w-full h-full flex items-center justify-center" href="" target="_blank">GIT</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <form method="dialog" class="modal-backdrop">
+      <button>close</button>
+    </form>
+  </dialog>
+
+
+  <!-- PROJECT CARD -->
+
+  <!-- PROJECT CARD -->
+
+  <!-- PROJECT CARD -->
+  <div class="hidden card max-w-[80%]  bg-primary w-full  min-w-250 flex flex-col p-25 rounded-35 gap-15 max-h-[50%]">
+    <div class="w-full text-center text-subtitle-lg font-semibold project-title">
+      RESTYLE OUTDATED WEBSITE
+    </div>
+    <div class="flex flex-col lg:flex-row gap-25 h-full ">
+      <div class="lg:w-[40%] flex justify-center max-h-50 lg:max-h-75">
+        <img class="project-img rounded-25 w-full  object-cover" src="/img/restyle-nuovo.png" alt="">
+      </div>
+      <div class="flex flex-col flex-1 max-h-50 lg:max-h-75 justify-between items-baseline gap-15 ">
+        <div class="flex-1 overflow-hidden text-ellipsis description h-full">
+
+        </div>
+        <div class="grid grid-cols-3 w-full gap-25 h-auto">
+          <div
+            class="open-modal btn border-none col-start-1 col-end-3 bg-secondary text-center p-1 rounded-full font-semibold cursor-pointer"
+            data-type="special">
+            MAGGIORI INFO</div>
+          <div class="w-full p-0 h-full col-start-3 rounded-full font-semibold cursor-pointer">
+            <a class="repo-link w-full h-full p-0 flex justify-center items-center"
+              href="https://github.com/granafilo/website-restyle-frontend" target="_blank"><span>GIT</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script type="module" src="/src/main.js"></script>
 </body>
